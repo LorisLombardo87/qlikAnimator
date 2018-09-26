@@ -7,7 +7,7 @@ The extension will select each value in the given field after a certain amount o
 
 ## Screenshots
 
-<img src = "https://github.com/LorisLombardo87/qlikAnimator/raw/master/asset/img/demo.gif" />
+<img src = "https://github.com/LorisLombardo87/qlikAnimator/raw/master/assets/images/demo.gif" />
 
 ## Installation
 
