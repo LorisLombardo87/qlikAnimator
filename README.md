@@ -11,7 +11,7 @@ The extension will select each value in the given field after a certain amount o
 
 ## Installation
 
-1. Download the latest version from [here](https://github.com/LorisLombardo87/qlikAnimator/raw/master/build/qlikAnimator_latest.zip) 
+1. Download the latest version from [here](https://github.com/LorisLombardo87/qlikAnimator/raw/master/build/qlikanimator_latest.zip) 
 2. Qlik Sense Desktop
 	* To install, copy all files in the .zip file to folder "C:\Users\[%Username%]\Documents\Qlik\Sense\Extensions\QlikAnimator"
 3. Qlik Sense Server
