@@ -1,0 +1,9 @@
+{
+	"name" : "Qlik Animator",
+	"description" : "Animate your qlik application",
+	"icon" : "",
+	"type" : "visualization",
+	"version": "0.0.1",
+	"preview" : "qlikanimator.png",
+	"author": "Loris Lombardo"
+}

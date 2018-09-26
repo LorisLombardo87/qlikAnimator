@@ -1,0 +1,7 @@
+/* Styles for Qlik Animator */
+
+/* Recommended pattern for styling your objects */
+.qv-object-qlikanimator .hello-world {
+  color:#333;
+  font-weight:bold;
+}
