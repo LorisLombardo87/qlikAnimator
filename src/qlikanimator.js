@@ -81,7 +81,7 @@ function ($, /*_,*/ qlik, props, initProps, extensionUtils, cssContent, bootstra
                         $scope.step = -1;
                         // console.log('clear');
                         qlik.currApp(this).field($scope.field).clear();
-                    }, 3000);
+                    },  $scope.layout.props.time);
                 }
             }
         }],
