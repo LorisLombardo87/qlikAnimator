@@ -43,8 +43,8 @@ function ($, /*_,*/ qlik, props, initProps, extensionUtils, cssContent, bootstra
 
             //console.log('[qlik animator]',$scope.layout);
 
-            var cycleTime = $scope.layout.props.time;
-            var stateName = $scope.layout.qStateName?$scope.layout.qStateName:'$';
+            var cycleTime = null;
+            var stateName = '$';
 
             $scope.step = -1;
             $scope.stepValue = '';
@@ -52,6 +52,9 @@ function ($, /*_,*/ qlik, props, initProps, extensionUtils, cssContent, bootstra
     		$scope.play = function () {
 
                 //console.log('[qlik animator - start cycle]',cycleTime);
+
+                cycleTime = $scope.layout.props.time;
+                stateName = $scope.layout.qStateName?$scope.layout.qStateName:'$';
 
                 $scope.list = $.extend(true, [], $scope.layout.qHyperCube.qDataPages[0].qMatrix);
                 $scope.field = $scope.layout.qHyperCube.qDimensionInfo[0].qGroupFieldDefs[0];
