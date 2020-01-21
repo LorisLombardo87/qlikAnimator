@@ -41,21 +41,24 @@ function ($, /*_,*/ qlik, props, initProps, extensionUtils, cssContent, bootstra
         // Angular Controller
         controller: ['$scope','$timeout', function ($scope, $timeout) {
 
-            console.log($scope.layout);
+            //console.log('[qlik animator]',$scope.layout);
+
+            var cycleTime = $scope.layout.props.time;
+            var stateName = $scope.layout.qStateName?$scope.layout.qStateName:'$';
 
             $scope.step = -1;
             $scope.stepValue = '';
 
     		$scope.play = function () {
 
+                //console.log('[qlik animator - start cycle]',cycleTime);
+
                 $scope.list = $.extend(true, [], $scope.layout.qHyperCube.qDataPages[0].qMatrix);
                 $scope.field = $scope.layout.qHyperCube.qDimensionInfo[0].qGroupFieldDefs[0];
 
-                // console.log($scope.field, $scope.list);
-
-                // console.log('play');
                 $scope.step = -1;
                 $scope.stepValue = '';
+
                 playStep();
             }
 
@@ -67,13 +70,13 @@ function ($, /*_,*/ qlik, props, initProps, extensionUtils, cssContent, bootstra
 
                     $scope.stepValue = $scope.list[$scope.step][0];
 
-                    // console.log('play step', $scope.step);
-                    // console.log('selecting', $scope.stepValue);
+                    // console.log('[qlik animator - play step]', $scope.step);
+                    // console.log('[qlik animator - selecting]', $scope.stepValue);
 
-                    qlik.currApp(this).field($scope.field).clear();
-                    qlik.currApp(this).field($scope.field).select([$scope.stepValue.qElemNumber], true, true);
+                    qlik.currApp(this).field($scope.field, stateName).clear();
+                    qlik.currApp(this).field($scope.field, stateName).select([$scope.stepValue.qElemNumber], true, true);
 
-                    $timeout(function(){playStep()}, $scope.layout.props.time);
+                    $timeout(function(){playStep()}, cycleTime);
                 }
                 else if($scope.step==($scope.list.length)){
                     
@@ -81,7 +84,7 @@ function ($, /*_,*/ qlik, props, initProps, extensionUtils, cssContent, bootstra
                         $scope.step = -1;
                         // console.log('clear');
                         qlik.currApp(this).field($scope.field).clear();
-                    },  $scope.layout.props.time);
+                    },  cycleTime);
                 }
             }
         }],

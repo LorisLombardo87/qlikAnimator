@@ -1,4 +1,4 @@
-define( [], function () {
+define( [], function ( ) {
 	'use strict';
 
 	// ****************************************************************************************
@@ -28,9 +28,11 @@ define( [], function () {
 		ref: "props.time",
 		label: "Animation Time (ms)",
 		type: "integer",
-		defaultValue: "3000",
+		defaultValue: 3000,
 		show: true
 	};
+
+	
 
 	// ****************************************************************************************
 	// Property Panel Definition

@@ -1,1 +1,1 @@
-define([],function(){"use strict";return{qHyperCubeDef:{qDimensions:[],qMeasures:[],qInitialDataFetch:[{qWidth:0,qHeight:0}]}}});
+define([],function(){"use strict";return{qHyperCubeDef:{qDimensions:[],qMeasures:[],qInitialDataFetch:[{qWidth:1,qHeight:1e3}]}}});
